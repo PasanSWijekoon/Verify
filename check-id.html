@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check ID</title>
+</head>
+<body>
+    <h1>ID Check</h1>
+    <p id="result"></p>
+
+    <script>
+        function getQueryParam(param) {
+            let urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        let id = getQueryParam('id');
+        if (id) {
+            // Perform your ID check logic here
+            document.getElementById('result').innerText = "ID: " + id + " is being checked.";
+            // Example: call an API to validate the ID
+        } else {
+            document.getElementById('result').innerText = "No ID provided.";
+        }
+    </script>
+</body>
+</html>
